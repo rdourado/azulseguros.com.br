@@ -1,0 +1,29 @@
+@import 'variables';
+
+html {
+	font: $base-font-size sans-serif;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: $grey;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.az--light {
+	color: $theme-black;
+}
+.az--dark {
+	background: $theme-black;
+	color: $theme-white;
+}
+.az--contrast {
+	background: $theme-blue;
+	color: $theme-white;
+}

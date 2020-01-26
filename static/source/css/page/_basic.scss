@@ -1,0 +1,51 @@
+&-basic {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+
+	img {
+		display: block;
+		flex-shrink: 0;
+		flex-basis: px(370);
+		height: auto;
+		max-width: 100%;
+	}
+
+	&__title,
+	&__lead {
+		margin: 1em 0 0;
+		padding: 0;
+		@include breakpoint(desktop) {
+			margin: 0 0 0 px(30);
+			max-width: px(470);
+		}
+	}
+
+	&__title {
+		color: $blue;
+		font: 700 rem(18) $quicksand;
+		@include breakpoint(desktop) {
+			font-size: rem(22);
+		}
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+	}
+
+	&__lead {
+		font: rem(14) $quicksand;
+		line-height: 1.5;
+		@include breakpoint(desktop) {
+			font-size: rem(16);
+			margin-top: 1em;
+		}
+	}
+}

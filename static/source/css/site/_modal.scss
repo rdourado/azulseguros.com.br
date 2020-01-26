@@ -1,0 +1,176 @@
+&-modal {
+	background: rgba($theme-black, 0.5);
+	bottom: 0;
+	box-sizing: border-box;
+	display: none;
+	font: 0 / 0 serif;
+	left: 0;
+	overflow: auto;
+	padding: px(20);
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+	vertical-align: middle;
+	white-space: nowrap;
+	z-index: 90;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		width: 0;
+	}
+
+	&--active {
+		display: block;
+	}
+
+	a {
+		color: $blue;
+		text-decoration: none;
+
+		.az--light & {
+			color: $theme-black;
+			text-decoration: underline;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+			text-decoration: underline;
+		}
+	}
+
+	&__wrap {
+		background: #fff;
+		border-radius: 0.6em;
+		box-sizing: border-box;
+		display: inline-block;
+		font: rem(16) $lato;
+		max-height: px(520);
+		max-width: px(670);
+		padding: px(40) px(60);
+		position: relative;
+		text-align: left;
+		vertical-align: middle;
+		white-space: normal;
+		width: 100%;
+		@include breakpoint(desktop) {
+			font-size: rem(18);
+			padding: px(50) px(80);
+		}
+
+		.az--dark & {
+			background: $theme-grey-dark;
+		}
+
+		.az--contrast & {
+			background: $theme-blue-dark;
+		}
+	}
+
+	&__close {
+		@extend .icon;
+		@extend .icon--close;
+		background: transparent;
+		border: none;
+		color: $blue;
+		cursor: pointer;
+		font: 0 / 0 serif;
+		outline: none;
+		padding: px(10);
+		position: absolute;
+		right: px(20);
+		top: px(10);
+		z-index: 10;
+		@include breakpoint(desktop) {
+			right: px(25);
+			top: px(15);
+		}
+
+		&::before {
+			font-size: rem(14);
+		}
+	}
+
+	&__title {
+		color: $greyish;
+		font: 700 rem(24) $quicksand;
+		margin: 0 auto px(30);
+		padding: 0;
+		text-align: center;
+		text-transform: uppercase;
+		@include breakpoint(desktop) {
+			margin: 0 auto px(50);
+		}
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+	}
+
+	&__field {
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 px(30);
+		@include breakpoint(desktop) {
+			margin-bottom: px(40);
+		}
+
+		span {
+			color: $grey;
+			font: rem(12) $lato;
+			margin: 1em 0 0;
+
+			.az--light & {
+				color: $theme-black;
+			}
+		}
+	}
+
+	&__input {
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid $greyish;
+		appearance: none;
+		display: block;
+		font: rem(16) $lato;
+		padding: 0.8em 0;
+		width: 100%;
+
+		.az--light & {
+			border-bottom-color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			border-bottom-color: $theme-white;
+		}
+	}
+
+	&__captcha {
+		margin: 0 0 px(40);
+	}
+
+	&__footer {
+		@include breakpoint(desktop) {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__button {
+		margin: px(10) auto 0 !important;
+		@include breakpoint(desktop) {
+			margin: 0 0 0 auto !important;
+		}
+	}
+}

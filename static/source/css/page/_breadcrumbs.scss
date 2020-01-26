@@ -1,0 +1,51 @@
+&-breadcrumbs {
+	color: $grey;
+	display: flex;
+	font: rem(10) $lato;
+	list-style: none;
+	margin: 0 6.25%;
+	padding: 2em 0;
+	text-transform: uppercase;
+	@include breakpoint(desktop) {
+		font-size: rem(13);
+		margin: 0 15%;
+	}
+
+	.az--light & {
+		color: $theme-black;
+	}
+
+	.az--dark &,
+	.az--contrast & {
+		color: $theme-white;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		.az--light &,
+		.az--dark &,
+		.az--contrast & {
+			text-decoration: underline;
+		}
+	}
+
+	span {
+		color: $greyish;
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+	}
+
+	li + li::before {
+		content: '\003E';
+		margin: 0 0.5em;
+	}
+}

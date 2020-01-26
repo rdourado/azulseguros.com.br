@@ -1,0 +1,66 @@
+@import 'inc/variables';
+@import 'inc/mixins';
+@import 'inc/reset';
+@import 'inc/icons';
+@import 'inc/slick';
+
+.az {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+
+	&-rule {
+		display: none;
+	}
+
+	&-up {
+		align-items: center;
+		background: rgba(#000, 0.47);
+		border: none;
+		bottom: 10%;
+		display: none;
+		font: 0 / 0 serif;
+		height: rem(35);
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+		position: fixed;
+		right: 15%;
+		width: rem(35);
+		@include breakpoint(desktop) {
+			display: flex;
+		}
+
+		&::before {
+			border-left: 1px solid $theme-white;
+			border-top: 1px solid $theme-white;
+			content: '';
+			display: inline-block;
+			padding: rem(3);
+			transform: translateY(35%) rotate(45deg);
+		}
+	}
+
+	@import 'site/a11y';
+	@import 'site/header';
+	@import 'site/footer';
+	@import 'site/nav';
+	@import 'site/access';
+	@import 'site/row';
+	@import 'site/modal';
+
+	@import 'page/main';
+	@import 'page/heading';
+	@import 'page/button';
+	@import 'page/breadcrumbs';
+	@import 'page/hero';
+	@import 'page/features';
+	@import 'page/products';
+	@import 'page/basic';
+	@import 'page/coverage';
+	@import 'page/faq';
+	@import 'page/legal';
+	@import 'page/and';
+	@import 'page/search';
+	@import 'page/services';
+}

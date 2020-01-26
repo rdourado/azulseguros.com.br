@@ -1,0 +1,61 @@
+&-and {
+	display: flex;
+	flex-wrap: wrap;
+	margin: px(30) 0 px(20);
+	@include breakpoint(desktop) {
+		margin: px(40) 0 px(20);
+	}
+
+	div {
+		background: $grey;
+		background-clip: content-box;
+		box-sizing: border-box;
+		height: 1px;
+		padding: 0 5px;
+		position: relative;
+		transform: rotate(180deg);
+		width: 50%;
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			height: 9px;
+			position: absolute;
+			transform: rotate(-45deg);
+			width: 9px;
+		}
+
+		&::before {
+			border: 1px solid transparent;
+			border-left-color: $grey;
+			border-radius: 50%;
+			bottom: 0;
+			left: 0;
+		}
+
+		&::after {
+			border: 1px solid transparent;
+			border-radius: 50%;
+			border-right-color: $grey;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	div + div {
+		transform: translateX(-1px) rotate(180deg) scaleX(-1);
+	}
+
+	p,
+	span {
+		font: rem(14) $lato;
+		margin: 0;
+		padding: 0.5em 0 0;
+		text-align: center;
+		width: 100%;
+		@include breakpoint(desktop) {
+			font-size: rem(16);
+		}
+	}
+}

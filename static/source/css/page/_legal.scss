@@ -1,0 +1,31 @@
+&-legal {
+	border-top: 1px solid $grey-lighter;
+	display: grid;
+	font: rem(10) $lato;
+	gap: 2em;
+	grid-template-columns: repeat(auto-fit, minmax(px(200), 1fr));
+	padding: px(40) 6.25%;
+	@include breakpoint(desktop) {
+		gap: px(50);
+		justify-items: center;
+		padding: px(60) 20%;
+	}
+
+	.no-cssgrid & > * {
+		margin-bottom: 2em;
+		@include breakpoint(desktop) {
+			margin-bottom: px(50);
+		}
+	}
+
+	p {
+		margin: 0;
+	}
+
+	em,
+	strong {
+		font-style: inherit;
+		font-weight: inherit;
+		text-transform: uppercase;
+	}
+}

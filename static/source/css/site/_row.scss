@@ -1,0 +1,30 @@
+&-row {
+	box-sizing: border-box;
+	padding: px(40) 6.25%;
+	@include breakpoint(desktop) {
+		padding: px(60) 15%;
+	}
+
+	// stylelint-disable no-descending-specificity
+	& ~ &,
+	& ~ & ~ & ~ &,
+	& ~ & ~ & ~ & ~ & ~ &,
+	& ~ & ~ & ~ & ~ & ~ & ~ & ~ & {
+		background: $grey-lighter;
+
+		.az--dark & {
+			background: $theme-grey-dark;
+		}
+
+		.az--contrast & {
+			background: $theme-blue-dark;
+		}
+	}
+
+	& ~ & ~ &,
+	& ~ & ~ & ~ & ~ &,
+	& ~ & ~ & ~ & ~ & ~ & ~ & {
+		background: transparent;
+	}
+	// stylelint-enable
+}

@@ -1,0 +1,59 @@
+&-heading {
+	color: $greyish;
+	font: 700 rem(20) $quicksand;
+	margin: 0 auto px(30);
+	max-width: px(20 * 29);
+	padding: 0;
+	text-align: center;
+	text-transform: uppercase;
+	@include breakpoint(desktop) {
+		font-size: rem(30);
+		margin-bottom: px(40);
+		max-width: px(30 * 29);
+	}
+
+	.az--light & {
+		color: $theme-black;
+	}
+
+	.az--dark &,
+	.az--contrast & {
+		color: $theme-white;
+	}
+
+	&--2 {
+		color: $blue;
+		font-size: rem(18);
+		text-align: left;
+		text-transform: none;
+		@include breakpoint(desktop) {
+			font-size: rem(22);
+		}
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+	}
+
+	b,
+	em,
+	strong {
+		color: $grey-darker;
+		font-style: normal;
+		font-weight: 400;
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+	}
+}

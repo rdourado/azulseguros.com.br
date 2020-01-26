@@ -1,0 +1,25 @@
+&-main {
+	&__heading {
+		background: $grey-lighter;
+
+		.az--dark & {
+			background: $theme-grey-dark;
+		}
+
+		.az--contrast & {
+			background: $theme-blue-dark;
+		}
+	}
+
+	&__page-title {
+		font: 700 rem(24) $quicksand;
+		line-height: 1.5;
+		margin: 0;
+		padding: 1.5em 6.5%;
+		@include breakpoint(desktop) {
+			font-size: rem(30);
+			padding-left: 15%;
+			padding-right: 15%;
+		}
+	}
+}

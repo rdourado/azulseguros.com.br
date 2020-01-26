@@ -1,0 +1,114 @@
+{
+	"name": "azul-seguros",
+	"version": "1.0.0",
+	"description": "Azul Seguros Website",
+	"author": "Rafael Dourado (http://rafaeldourado.com.br)",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"homepage": "https://bitbucket.org/rafaeldourado/azul-seguros",
+	"dependencies": {
+		"core-js": "3"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
+		"@wordpress/browserslist-config": "^2.6.0",
+		"@wordpress/eslint-plugin": "^3.0.0",
+		"babel-loader": "^8.0.6",
+		"babel-plugin-syntax-dynamic-import": "^6.18.0",
+		"browser-sync": "^2.26.7",
+		"eslint": "^6.3.0",
+		"eslint-config-prettier": "^6.1.0",
+		"eslint-loader": "^3.0.0",
+		"eslint-plugin-prettier": "^3.1.0",
+		"js-cookie": "^2.2.1",
+		"modernizr": "^3.8.0",
+		"node-sass": "^4.12.0",
+		"npm-run-all": "^4.1.5",
+		"npm-watch": "^0.6.0",
+		"postcss-cli": "^6.1.3",
+		"postcss-preset-env": "^6.7.0",
+		"prettier": "1.18.2",
+		"stylelint": "^10.1.0",
+		"stylelint-config-prettier": "^5.2.0",
+		"stylelint-config-wordpress": "^14.0.0",
+		"stylelint-prettier": "^1.1.1",
+		"webpack": "^4.39.3",
+		"webpack-cli": "^3.3.7"
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"prettier": {
+		"printWidth": 100,
+		"tabWidth": 2,
+		"useTabs": true,
+		"semi": false,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"endOfLine": "lf"
+	},
+	"eslintConfig": {
+		"root": true,
+		"extends": [
+			"plugin:@wordpress/eslint-plugin/esnext",
+			"plugin:prettier/recommended"
+		],
+		"env": {
+			"browser": true,
+			"node": true,
+			"es6": true
+		},
+		"rules": {
+			"no-console": "warn"
+		},
+		"globals": {
+			"jQuery": "readonly",
+			"wp": "readonly"
+		}
+	},
+	"stylelint": {
+		"extends": [
+			"stylelint-config-wordpress/scss",
+			"stylelint-prettier/recommended"
+		],
+		"ignoreFiles": "assets/css/*.css"
+	},
+	"babel": {
+		"presets": [
+			[
+				"@babel/preset-env",
+				{
+					"useBuiltIns": "usage",
+					"corejs": 3
+				}
+			]
+		]
+	},
+	"watch": {
+		"css:dev": {
+			"patterns": "source/css",
+			"extensions": "scss"
+		},
+		"js:dev": {
+			"patterns": "source/js",
+			"extensions": "js"
+		}
+	},
+	"scripts": {
+		"precss:dev": "stylelint \"source/css/**/*.scss\"",
+		"css:dev": "node-sass --source-map-embed=true -o assets/css source/css",
+		"postcss:dev": "postcss \"assets/css/*.css\" -r -u postcss-preset-env --env=development",
+		"css:prod": "node-sass --output-style=compressed -x -o assets/css source/css",
+		"postcss:prod": "postcss \"assets/css/*.css\" -r -u postcss-preset-env --no-map --env=production",
+		"js:dev": "webpack --mode development --devtool cheap-module-eval-source-map",
+		"js:prod": "webpack --mode production",
+		"server": "browser-sync -s \".\" -w \"**/*.{html,css,js}\" --ignore \"source\" --no-ghost-mode -b \"google chrome\"",
+		"build:dev": "run-p css:dev js:dev",
+		"build:prod": "run-p css:prod js:prod",
+		"build": "run-s build:prod",
+		"watch": "npm-watch",
+		"start": "run-p watch server",
+		"stop": "docker-compose down"
+	}
+}

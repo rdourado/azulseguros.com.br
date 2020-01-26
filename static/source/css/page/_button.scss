@@ -1,0 +1,36 @@
+.az-button {
+	background: $blue;
+	border: none;
+	border-radius: 0.5em;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font: 700 rem(14) $quicksand;
+	margin: 0 auto;
+	padding: px(10) px(30);
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	@include breakpoint(desktop) {
+		font-size: rem(16);
+	}
+
+	.az--light & {
+		background: $theme-grey-dark;
+		color: $theme-white;
+		text-decoration: underline;
+	}
+
+	.az--dark & {
+		background: $theme-white;
+		color: $theme-grey-dark;
+		text-decoration: underline;
+	}
+
+	.az--contrast & {
+		background: $theme-white;
+		color: $theme-blue-dark;
+		text-decoration: underline;
+	}
+}

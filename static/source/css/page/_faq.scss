@@ -1,0 +1,89 @@
+&-faq {
+	&__question {
+		margin: 0;
+		padding: 0;
+
+		& + & {
+			margin-top: 3px;
+		}
+	}
+
+	&__title {
+		background: $grey-lighter;
+		border-radius: px(5);
+		cursor: pointer;
+		font: rem(14) $lato;
+		line-height: 1.4;
+		margin: 0;
+		outline: none;
+		padding: px(15) px(40) px(15) px(20);
+		position: relative;
+		@include breakpoint(desktop) {
+			font-size: rem(18);
+			padding: px(25) px(60) px(25) px(30);
+		}
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark & {
+			background: $theme-grey-dark;
+			color: $theme-white;
+		}
+
+		.az--contrast & {
+			background: $theme-blue-dark;
+			color: $theme-white;
+		}
+
+		b,
+		em,
+		strong {
+			color: $blue;
+			font-weight: inherit;
+
+			.az--light & {
+				color: $theme-black;
+			}
+
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+			}
+		}
+
+		&::after {
+			border-bottom: 2px solid $blue;
+			border-right: 2px solid $blue;
+			content: '';
+			margin: 0 2px 0 auto;
+			padding: 3px;
+			position: absolute;
+			right: px(15);
+			top: 50%;
+			transform: translateY(-33%) rotate(45deg);
+			@include breakpoint(desktop) {
+				right: px(30);
+			}
+		}
+	}
+
+	&__question[open] &__title::after {
+		transform: translateY(13%) rotate(225deg);
+	}
+
+	&__answer {
+		font: rem(14) $lato;
+		line-height: 1.5;
+		padding: px(10) px(20);
+		@include breakpoint(desktop) {
+			font-size: rem(16);
+			padding: px(20) px(30);
+		}
+	}
+}

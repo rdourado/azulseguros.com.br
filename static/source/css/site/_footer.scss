@@ -1,0 +1,245 @@
+&-footer {
+	border-top: 1px solid $grey-lighter;
+	margin: auto 0 0;
+	padding: px(20) 6.25% px(60);
+	@include breakpoint(desktop) {
+		border: none;
+		padding: px(100) 0;
+	}
+
+	a,
+	abbr {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.az--light & a,
+	.az--dark & a,
+	.az--contrast & a {
+		text-decoration: underline;
+	}
+
+	&__nav {
+		@include breakpoint(desktop) {
+			margin: 0 20%;
+		}
+	}
+
+	&__menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@include breakpoint(desktop) {
+			color: $greyish;
+			display: flex;
+			font: 700 rem(16) $quicksand;
+			justify-content: space-between;
+			text-transform: uppercase;
+
+			.az--light & {
+				color: $theme-black;
+			}
+
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+			}
+		}
+
+		> .menu-item {
+			&,
+			> a {
+				display: none;
+				@include breakpoint(desktop) {
+					display: inline-block;
+				}
+			}
+		}
+
+		> .menu-item--social {
+			display: block;
+		}
+
+		.sub-menu {
+			color: $grey;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-transform: none;
+			@include breakpoint(desktop) {
+				font: rem(14) $lato;
+				margin-top: px(30);
+			}
+
+			.menu-item {
+				margin-top: 0.5em;
+			}
+
+			.az--light & {
+				color: $theme-black;
+			}
+
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+			}
+		}
+
+		.menu-item--social .sub-menu {
+			display: flex;
+			justify-content: center;
+		}
+
+		.menu-item--social .menu-item {
+			margin: 0;
+
+			+ .menu-item {
+				margin-left: 1em;
+			}
+		}
+
+		.menu-item--facebook a,
+		.menu-item--twitter a,
+		.menu-item--instagram a,
+		.menu-item--linkedin a {
+			@extend .icon;
+			color: $blue-darker;
+			font: 0 / 0 serif;
+
+			&::before {
+				background: $grey-lighter;
+				border-radius: 50%;
+				display: inline-block;
+				font: rem(20) '#{$icomoon-font-family}';
+				line-height: px(34);
+				text-align: center;
+				width: px(34);
+
+				.az--dark & {
+					background: $theme-grey-dark;
+				}
+
+				.az--contrast & {
+					background: $theme-blue-dark;
+				}
+			}
+
+			.az--light & {
+				color: $theme-black;
+			}
+
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+			}
+		}
+
+		// stylelint-disable no-descending-specificity
+		.menu-item--facebook a {
+			@extend .icon--facebook;
+		}
+		.menu-item--twitter a {
+			@extend .icon--twitter;
+		}
+		.menu-item--instagram a {
+			@extend .icon--instagram;
+		}
+		.menu-item--linkedin a {
+			@extend .icon--linkedin;
+		}
+		// stylelint-enable
+	}
+
+	&__meta {
+		align-items: center;
+		color: $grey-dark;
+		display: flex;
+		flex-direction: column;
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+	}
+
+	&__company {
+		cursor: default;
+		font: rem(7.2) $lato;
+		margin: px(20) auto 0;
+		text-transform: uppercase;
+		@include breakpoint(desktop) {
+			font-size: rem(12);
+			margin-top: px(80);
+		}
+
+		img {
+			display: block;
+			margin-top: px(2);
+			width: px(80);
+			@include breakpoint(desktop) {
+				width: px(140);
+			}
+		}
+	}
+
+	&__copy,
+	&__privacy {
+		display: block;
+		font: rem(10) $lato;
+		line-height: 1.6;
+		margin: 0;
+		@include breakpoint(desktop) {
+			font-size: rem(14);
+		}
+	}
+
+	&__budget {
+		background: $blue;
+		border: none;
+		bottom: 0;
+		box-sizing: border-box;
+		color: #fff !important;
+		display: block;
+		font: 700 rem(16) $quicksand;
+		left: 0;
+		margin: 0 auto;
+		padding: 0.7em;
+		position: fixed;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		width: 100%;
+		@include breakpoint(desktop) {
+			display: none;
+		}
+
+		.az--light & {
+			background: $theme-grey-dark;
+			border-top: 1px solid $theme-white;
+			text-decoration: underline;
+		}
+
+		.az--dark & {
+			background: $theme-grey-dark;
+			border-top: 1px solid $theme-white;
+			text-decoration: underline;
+		}
+
+		.az--contrast & {
+			background: $theme-blue-dark;
+			border-top: 1px solid $theme-white;
+			text-decoration: underline;
+		}
+	}
+
+	&__copy {
+		margin-top: px(20);
+		@include breakpoint(desktop) {
+			margin-top: px(40);
+		}
+	}
+}

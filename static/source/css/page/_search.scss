@@ -1,0 +1,84 @@
+&-search {
+	display: block;
+	padding: px(40) 6.25%;
+	@include breakpoint(desktop) {
+		padding: px(60) 15%;
+	}
+
+	&__label {
+		color: $greyish;
+		display: block;
+		font: 700 rem(18) $quicksand;
+		margin: 0 0 px(30);
+		@include breakpoint(desktop) {
+			font-size: rem(22);
+			margin-bottom: px(40);
+		}
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+	}
+
+	&__field {
+		border-bottom: 1px solid $greyish;
+		display: flex;
+		margin-right: 33%;
+
+		.az--light & {
+			border-bottom-color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			border-bottom-color: $theme-white;
+		}
+	}
+
+	&__input {
+		background: transparent;
+		border: none;
+		display: block;
+		font: rem(14) $quicksand;
+		flex-grow: 1;
+		outline: none;
+		padding: 1em 0;
+		@include breakpoint(desktop) {
+			font-size: rem(18);
+		}
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+	}
+
+	&__button {
+		@extend .icon;
+		@extend .icon--search;
+		background: transparent;
+		border: none;
+		color: $blue;
+		cursor: pointer;
+		font: 0 / 0 serif;
+		flex-shrink: 0;
+		margin: 0;
+		padding: 0 px(10);
+
+		&::before {
+			font-size: rem(16);
+			@include breakpoint(desktop) {
+				font-size: rem(20);
+			}
+		}
+	}
+}

@@ -1,0 +1,98 @@
+&-coverage {
+	&__lead {
+		@extend .az-features__lead;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(px(120), 1fr));
+		justify-items: space-around;
+		list-style: none;
+		margin: px(-10) auto;
+		max-width: px(768);
+		padding: 0;
+		@include breakpoint(desktop) {
+			margin: px(-15) auto;
+		}
+	}
+
+	&__item {
+		color: $greyish;
+		font: 700 rem(16) $quicksand;
+		padding: px(10);
+		text-align: center;
+		@include breakpoint(desktop) {
+			font-size: rem(20);
+			padding: px(15);
+		}
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+
+		.icon {
+			color: $blue;
+			display: block;
+			font-size: rem(40);
+			@include breakpoint(desktop) {
+				font-size: rem(65);
+			}
+
+			.az--light & {
+				color: $theme-black;
+			}
+
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+			}
+		}
+	}
+
+	&__extra {
+		margin: px(25) auto 0;
+		max-width: px(650);
+		@include breakpoint(desktop) {
+			margin-top: px(45);
+		}
+	}
+
+	&__extra &__lead {
+		margin-top: px(-30);
+		text-align: left;
+	}
+
+	&__extra &__list {
+		display: grid;
+		gap: px(10);
+		grid-template-columns: repeat(auto-fit, minmax(px(220), 1fr));
+		margin: 0;
+		@include breakpoint(desktop) {
+			gap: px(15);
+		}
+
+		.no-cssgrid & > * {
+			margin-bottom: px(10);
+			@include breakpoint(desktop) {
+				margin-bottom: px(15);
+			}
+		}
+	}
+
+	// stylelint-disable no-descending-specificity
+	&__extra &__item {
+		font: rem(14) $lato;
+		list-style: disc inside;
+		padding: 0;
+		text-align: left;
+		@include breakpoint(desktop) {
+			font-size: rem(16);
+		}
+	}
+	// stylelint-enable
+}

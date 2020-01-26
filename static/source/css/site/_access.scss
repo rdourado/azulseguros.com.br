@@ -1,0 +1,288 @@
+&-access {
+	background: #fff;
+	box-shadow: 0 1px 3px 0 rgba(#000, 0.3);
+	display: none;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	margin: 0 px(60) 0 0;
+	padding: px(30) 0 0;
+	position: absolute;
+	right: 15%;
+	top: px(95);
+
+	.az-modal & {
+		background: transparent;
+		box-shadow: none;
+		display: flex;
+		margin: px(-40) px(-60);
+		padding: 0;
+		position: relative;
+		right: 0;
+		top: 0;
+		@include breakpoint(desktop) {
+			margin: px(-50) px(-80);
+		}
+	}
+
+	.az--dark & {
+		background: $theme-black;
+		box-shadow: 1px 0 3px 0 $theme-grey;
+	}
+	.az--contrast & {
+		background: $theme-blue;
+		box-shadow: 1px 0 3px 0 $theme-blue-dark;
+	}
+
+	&--active {
+		display: flex;
+	}
+
+	&__header {
+		align-items: center;
+		border-bottom: 1px solid $grey-lighter;
+		display: flex;
+		font: rem(18) $lato;
+		margin: 0;
+		padding: px(18) px(40);
+		width: 100%;
+
+		&::before {
+			@extend .icon;
+			@extend .icon--papers;
+			font-size: 1.8em;
+			margin-right: 0.2em;
+		}
+	}
+
+	&__menu {
+		border-left: 1px solid $grey-lighter;
+		color: $greyish;
+		font: 700 rem(16) $quicksand;
+		list-style: none;
+		margin: 0;
+		padding: 0 0 px(30);
+
+		.az-modal & {
+			width: 100%;
+			@include breakpoint(desktop) {
+				width: auto;
+			}
+		}
+
+		.az--light & {
+			color: $theme-black;
+			text-decoration: underline;
+		}
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+			text-decoration: underline;
+		}
+
+		.menu-item {
+			min-width: 14em;
+
+			+ .menu-item {
+				border-top: 1px solid $grey-lighter;
+			}
+		}
+
+		a {
+			color: inherit;
+			display: block;
+			padding: px(20);
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		.current-menu-item {
+			background: $grey-lighter;
+			box-shadow: inset 4px 0 0 0 $blue;
+			color: $blue;
+			cursor: default;
+
+			.az--light & {
+				box-shadow: inset 4px 0 0 0 $theme-black;
+				color: $theme-black;
+			}
+			.az--dark & {
+				background: $theme-grey-dark;
+				box-shadow: inset 4px 0 0 0 $theme-white;
+				color: $theme-white;
+			}
+			.az--contrast & {
+				background: $theme-blue-dark;
+				box-shadow: inset 4px 0 0 0 $theme-white;
+				color: $theme-white;
+			}
+		}
+	}
+
+	.az-modal &__form-group {
+		width: 100%;
+		@include breakpoint(desktop) {
+			width: calc(100% - #{px(225)});
+		}
+	}
+
+	&__form {
+		display: none;
+
+		&--active {
+			display: block;
+		}
+	}
+
+	&__wrapper {
+		border: none;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0 px(40) px(30);
+
+		.az-modal & {
+			padding: 0 px(40) px(40);
+			@include breakpoint(desktop) {
+				padding-top: px(30);
+			}
+		}
+	}
+
+	&__title {
+		display: none;
+	}
+
+	&__input {
+		appearance: none;
+		border: none;
+		border-bottom: 1px solid $greyish;
+		box-sizing: border-box;
+		color: $grey-dark;
+		display: block;
+		font: rem(16) $lato;
+		margin: 0 0 px(30);
+		min-width: 20em;
+		outline: none;
+		padding: 0.5em 1em;
+		width: 100%;
+
+		.az-modal & {
+			min-width: 10em;
+		}
+
+		&::placeholder {
+			color: $grey;
+		}
+	}
+
+	&__input-meta {
+		color: $grey;
+		display: block;
+		font: rem(12) $lato;
+		margin: px(-30) 0 0;
+		padding: px(5) px(16) px(10);
+
+		a {
+			color: $blue;
+			text-decoration: none;
+
+			.az--light & {
+				color: $theme-black;
+				text-decoration: underline;
+			}
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+				text-decoration: underline;
+			}
+		}
+
+		&--error {
+			color: $red;
+
+			.az--light & {
+				color: $theme-black;
+			}
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+			}
+
+			// stylelint-disable-next-line no-descending-specificity
+			a {
+				color: inherit;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__submit {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		margin: px(30) 0 0;
+	}
+
+	&__button {
+		background: $blue;
+		border: none;
+		border-radius: 0.5em;
+		box-sizing: border-box;
+		color: #fff;
+		cursor: pointer;
+		display: block;
+		font: 700 rem(16) $quicksand;
+		padding: px(10);
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		width: 100%;
+
+		.az--light & {
+			background: $theme-black;
+			color: $theme-white;
+			text-decoration: underline;
+		}
+		.az--dark & {
+			background: $theme-white;
+			color: $theme-black;
+			text-decoration: underline;
+		}
+		.az--contrast & {
+			background: $theme-white;
+			color: $theme-blue;
+			text-decoration: underline;
+		}
+
+		&--secondary {
+			background: $greyish;
+		}
+
+		// stylelint-disable-next-line no-descending-specificity
+		& + & {
+			margin-top: px(20);
+		}
+	}
+
+	&__signup {
+		background: transparent;
+		border: none;
+		border-radius: 0.5em;
+		box-sizing: border-box;
+		color: $blue;
+		cursor: pointer;
+		display: block;
+		font: rem(12) $lato;
+		margin: px(10);
+		text-decoration: none;
+
+		.az--light & {
+			color: $theme-black;
+			text-decoration: underline;
+		}
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+			text-decoration: underline;
+		}
+	}
+}

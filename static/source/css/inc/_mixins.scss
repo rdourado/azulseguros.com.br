@@ -1,0 +1,23 @@
+@import 'variables';
+
+@function rem($px) {
+	@return (($px * 1px) / $base-font-size) * 1rem;
+}
+
+@function px($px) {
+	@return ($px * 1px);
+} // Don't ask…
+
+@mixin breakpoint($device) {
+	@if $device == desktop {
+		@media screen and (min-width: #{rem(1024)}) {
+			@content;
+		}
+	} @else if $device == mobile {
+		@media screen and (max-width: #{rem(1024 - 1)}) {
+			@content;
+		}
+	} @else {
+		@error 'Valores válidos: `desktop` ou `mobile`';
+	}
+}

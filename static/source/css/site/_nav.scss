@@ -1,0 +1,295 @@
+&-nav {
+	align-items: center;
+	background: $blue;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	@include breakpoint(desktop) {
+		background: transparent;
+		display: flex;
+		position: static;
+	}
+
+	&__menu,
+	&__cloned-menu {
+		align-items: center;
+		color: #fff;
+		flex-grow: 1;
+		font: rem(13) $lato;
+		justify-content: space-between;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		a {
+			align-items: center;
+			border-bottom: 1px solid darken($blue, 4%);
+			color: inherit;
+			display: flex;
+			padding: 1em 6.25%;
+			text-decoration: none;
+
+			.az--light &,
+			.az--dark &,
+			.az--contrast & {
+				text-decoration: underline;
+			}
+		}
+
+		> .menu-item {
+			font-weight: 700;
+			position: relative;
+			text-transform: uppercase;
+		}
+
+		> .menu-item-has-children > a::after,
+		> .menu-item--login > a::after {
+			border-bottom: 2px solid #fff;
+			border-right: 2px solid #fff;
+			content: '';
+			margin: 0 2px 0 auto;
+			padding: 3px;
+			transform: translateY(-33%) rotate(45deg);
+		}
+
+		.sub-menu {
+			background: darken($blue, 4%);
+			display: none;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-transform: none;
+		}
+
+		.sub-menu a::before {
+			border-right: 1px solid #fff;
+			border-top: 1px solid #fff;
+			content: '';
+			margin: 0 0.6em 0 0;
+			padding: 2px;
+			transform: translateY(-15%) rotate(45deg);
+		}
+
+		@include breakpoint(mobile) {
+			> .menu-item--expanded > a::after {
+				transform: translateY(33%) rotate(225deg);
+			}
+
+			> .menu-item--expanded .sub-menu {
+				display: block;
+			}
+		}
+
+		@include breakpoint(desktop) {
+			> .menu-item--active > a::after,
+			> .menu-item-has-children:hover > a::after {
+				transform: translateY(33%) rotate(225deg);
+			}
+
+			> .menu-item-has-children:hover .sub-menu {
+				display: block;
+			}
+		}
+	}
+
+	&__menu {
+		display: none;
+
+		@include breakpoint(mobile) {
+			.az-header--show-menu & {
+				display: block;
+			}
+		}
+
+		@include breakpoint(desktop) {
+			color: inherit;
+			display: flex;
+			font: rem(16) $quicksand;
+
+			a {
+				border: none;
+				line-height: px(78);
+				padding: 0;
+			}
+
+			> .menu-item {
+				font-weight: 400;
+				text-transform: none;
+
+				&:not(.menu-item--home) + .menu-item {
+					margin-left: px(30);
+				}
+			}
+
+			> .menu-item-has-children > a::after,
+			> .menu-item--login > a::after {
+				border-bottom-color: $blue;
+				border-right-color: $blue;
+				margin-left: px(12);
+			}
+
+			.sub-menu {
+				background: #fff;
+				box-shadow: 0 1px 3px 0 rgba(#000, 0.3);
+				left: px(-25);
+				margin-top: px(-10);
+				min-width: 100%;
+				padding: px(15) px(25);
+				position: absolute;
+				top: 100%;
+				white-space: nowrap;
+				z-index: 10;
+
+				.az--dark & {
+					background: $theme-grey-dark;
+				}
+
+				.az--contrast & {
+					background: $theme-blue-dark;
+				}
+			}
+
+			.sub-menu a {
+				line-height: normal;
+				padding: px(8) px(5);
+
+				&::before {
+					border-right-color: $blue;
+					border-top-color: $blue;
+					padding: 3px;
+					transform: rotate(45deg);
+				}
+			}
+
+			> .menu-item--expanded > a::after {
+				transform: translateY(33%) rotate(225deg);
+			}
+
+			> .menu-item--expanded .sub-menu {
+				display: block;
+			}
+
+			> .menu-item--active > a::after,
+			> .menu-item-has-children:hover > a::after {
+				transform: translateY(33%) rotate(225deg);
+			}
+
+			> .menu-item-has-children:hover .sub-menu {
+				display: block;
+			}
+		}
+
+		> .menu-item--home {
+			display: none;
+		}
+
+		> .menu-item--button {
+			display: none;
+			@include breakpoint(desktop) {
+				color: #fff;
+				display: block;
+				margin-right: auto;
+
+				.az--dark & {
+					color: $theme-grey-dark;
+				}
+
+				.az--contrast & {
+					color: $theme-blue-dark;
+				}
+			}
+
+			> a {
+				background: $blue;
+				border-radius: 0.5em;
+				display: block;
+				font-weight: 700;
+				line-height: 1.875;
+				padding: 0 2em;
+				text-transform: uppercase;
+
+				.az--light & {
+					background: $theme-grey-dark;
+					text-decoration: underline;
+				}
+
+				.az--dark &,
+				.az--contrast & {
+					background: $theme-white;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		> .menu-item--search,
+		> .menu-item--login {
+			display: none;
+			@include breakpoint(desktop) {
+				display: block;
+			}
+
+			// stylelint-disable-next-line no-descending-specificity
+			> a {
+				text-decoration: none;
+			}
+
+			> a::before {
+				@extend .icon;
+				color: $blue;
+				display: inline-block;
+				font-size: rem(18);
+				margin-right: px(12);
+				vertical-align: middle;
+			}
+		}
+
+		> .menu-item--search > a::before {
+			@extend .icon--search;
+		}
+
+		> .menu-item--login > a::before {
+			@extend .icon--user-2;
+		}
+	}
+
+	&__cloned-menu {
+		background: $blue;
+		display: none;
+		position: absolute;
+		right: 15%;
+		top: 100%;
+		z-index: 11;
+
+		.az-header--show-menu & {
+			@include breakpoint(desktop) {
+				display: block;
+			}
+		}
+
+		> .menu-item {
+			min-width: px(320);
+			text-transform: none;
+
+			// stylelint-disable-next-line no-descending-specificity
+			> a {
+				border-bottom: 1px solid darken($blue, 4%);
+			}
+		}
+
+		// stylelint-disable-next-line no-descending-specificity
+		.sub-menu a {
+			border-bottom: 1px solid $blue;
+		}
+
+		> .menu-item-has-children > a::after {
+			margin-left: auto;
+		}
+
+		> .menu-item--button,
+		> .menu-item--search,
+		> .menu-item--login {
+			display: none;
+		}
+	}
+}

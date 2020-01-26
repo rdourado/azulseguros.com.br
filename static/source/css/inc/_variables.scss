@@ -1,0 +1,116 @@
+// Fonts
+
+$base-font-size: 16px;
+$lato: 'Lato', sans-serif;
+$quicksand: 'Quicksand', sans-serif;
+
+// Colors
+
+$grey-lighter: #f0f2f5;
+$greyish: #596f93;
+$blue: #0093dd; // old: #1390ca
+$grey: #8b909a;
+$grey-dark: #727884;
+
+$grey-light: $grey-lighter; // old: #ccc
+$grey-darker: $grey-dark; // old: #4a4a4a
+$blue-light: $blue; // old: #32beff
+$blue-dark: $greyish; // old: #2f629b
+$blue-darker: $greyish; // old: #024282
+$red: #9e4b4b;
+
+$theme-blue-light: #80cdf4;
+$theme-blue: #2f629b;
+$theme-blue-dark: #204875;
+$theme-grey: #555;
+$theme-grey-dark: #222;
+$theme-black: #000;
+$theme-white: #fff;
+
+// IcoMoon
+
+$icomoon-font-family: 'azul-seguros' !default;
+$icomoon-font-path: '../fonts' !default;
+
+$icon-card: '\e94d';
+$icon-car-2: '\e94c';
+$icon-alarm: '\e900';
+$icon-alarm-2: '\e901';
+$icon-barcode: '\e902';
+$icon-book: '\e903';
+$icon-calculator: '\e904';
+$icon-caller: '\e905';
+$icon-car: '\e906';
+$icon-car-add: '\e907';
+$icon-car-crash: '\e90c';
+$icon-car-gone: '\e908';
+$icon-car-keys: '\e909';
+$icon-car-speed: '\e90a';
+$icon-car-ticket: '\e90b';
+$icon-chat: '\e90d';
+$icon-check: '\e90e';
+$icon-clips: '\e90f';
+$icon-close: '\e910';
+$icon-cloud: '\e911';
+$icon-day-24: '\e912';
+$icon-discount-tag: '\e913';
+$icon-explosion: '\e914';
+$icon-eye: '\e915';
+$icon-files: '\e916';
+$icon-fire: '\e917';
+$icon-gas: '\e918';
+$icon-group: '\e919';
+$icon-hands-add: '\e91a';
+$icon-handshake: '\e91b';
+$icon-help: '\e91c';
+$icon-home: '\e91d';
+$icon-home-2: '\e91e';
+$icon-justice: '\e91f';
+$icon-layers-add: '\e920';
+$icon-left: '\e921';
+$icon-lightning: '\e922';
+$icon-like: '\e923';
+$icon-long-paper: '\e924';
+$icon-mail: '\e925';
+$icon-mail-2: '\e926';
+$icon-menu: '\e927';
+$icon-message: '\e928';
+$icon-money: '\e929';
+$icon-money-canvas: '\e92a';
+$icon-money-gone: '\e92b';
+$icon-nature: '\e92c';
+$icon-paper: '\e92d';
+$icon-paper-warn: '\e92e';
+$icon-papers: '\e92f';
+$icon-password: '\e930';
+$icon-path: '\e931';
+$icon-phone: '\e932';
+$icon-piggy-bank: '\e933';
+$icon-pin: '\e934';
+$icon-plant: '\e935';
+$icon-podium: '\e936';
+$icon-price-tag: '\e937';
+$icon-right: '\e938';
+$icon-search: '\e939';
+$icon-siren: '\e93a';
+$icon-smile: '\e93b';
+$icon-thief: '\e93c';
+$icon-tire: '\e93d';
+$icon-tools: '\e93e';
+$icon-tools-2: '\e93f';
+$icon-tools-pin: '\e940';
+$icon-tow: '\e941';
+$icon-tow-2: '\e942';
+$icon-tow-24: '\e943';
+$icon-upload: '\e944';
+$icon-user: '\e945';
+$icon-user-2: '\e946';
+$icon-user-3: '\e947';
+$icon-warn: '\e948';
+$icon-warn-box: '\e949';
+$icon-window-warn: '\e94a';
+$icon-windshield: '\e94b';
+$icon-twitter: '\f099';
+$icon-facebook: '\f09a';
+$icon-linkedin: '\f0e1';
+$icon-instagram: '\f16d';

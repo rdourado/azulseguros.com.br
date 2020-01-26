@@ -1,0 +1,271 @@
+@import 'variables';
+
+@font-face {
+	font-family: '#{$icomoon-font-family}';
+	src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?brwtnc') format('truetype'),
+		url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?brwtnc') format('woff'),
+		url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?brwtnc##{$icomoon-font-family}')
+			format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-display: block;
+}
+
+.icon::before {
+	font-family: '#{$icomoon-font-family}' !important;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 1;
+	speak: none;
+	text-transform: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+.icon--alarm::before {
+	content: $icon-alarm;
+}
+.icon--alarm-2::before {
+	content: $icon-alarm-2;
+}
+.icon--barcode::before {
+	content: $icon-barcode;
+}
+.icon--book::before {
+	content: $icon-book;
+}
+.icon--calculator::before {
+	content: $icon-calculator;
+}
+.icon--caller::before {
+	content: $icon-caller;
+}
+.icon--car::before {
+	content: $icon-car;
+}
+.icon--car-2::before {
+	content: $icon-car-2;
+}
+.icon--car-add::before {
+	content: $icon-car-add;
+}
+.icon--car-crash::before {
+	content: $icon-car-crash;
+}
+.icon--car-gone::before {
+	content: $icon-car-gone;
+}
+.icon--car-keys::before {
+	content: $icon-car-keys;
+}
+.icon--car-speed::before {
+	content: $icon-car-speed;
+}
+.icon--car-ticket::before {
+	content: $icon-car-ticket;
+}
+.icon--card::before {
+	content: $icon-card;
+}
+.icon--chat::before {
+	content: $icon-chat;
+}
+.icon--check::before {
+	content: $icon-check;
+}
+.icon--clips::before {
+	content: $icon-clips;
+}
+.icon--close::before {
+	content: $icon-close;
+}
+.icon--cloud::before {
+	content: $icon-cloud;
+}
+.icon--day-24::before {
+	content: $icon-day-24;
+}
+.icon--discount-tag::before {
+	content: $icon-discount-tag;
+}
+.icon--explosion::before {
+	content: $icon-explosion;
+}
+.icon--eye::before {
+	content: $icon-eye;
+}
+.icon--files::before {
+	content: $icon-files;
+}
+.icon--fire::before {
+	content: $icon-fire;
+}
+.icon--gas::before {
+	content: $icon-gas;
+}
+.icon--group::before {
+	content: $icon-group;
+}
+.icon--hands-add::before {
+	content: $icon-hands-add;
+}
+.icon--handshake::before {
+	content: $icon-handshake;
+}
+.icon--help::before {
+	content: $icon-help;
+}
+.icon--home::before {
+	content: $icon-home;
+}
+.icon--home-2::before {
+	content: $icon-home-2;
+}
+.icon--justice::before {
+	content: $icon-justice;
+}
+.icon--layers-add::before {
+	content: $icon-layers-add;
+}
+.icon--left::before {
+	content: $icon-left;
+}
+.icon--lightning::before {
+	content: $icon-lightning;
+}
+.icon--like::before {
+	content: $icon-like;
+}
+.icon--long-paper::before {
+	content: $icon-long-paper;
+}
+.icon--mail::before {
+	content: $icon-mail;
+}
+.icon--mail-2::before {
+	content: $icon-mail-2;
+}
+.icon--menu::before {
+	content: $icon-menu;
+}
+.icon--message::before {
+	content: $icon-message;
+}
+.icon--money::before {
+	content: $icon-money;
+}
+.icon--money-canvas::before {
+	content: $icon-money-canvas;
+}
+.icon--money-gone::before {
+	content: $icon-money-gone;
+}
+.icon--nature::before {
+	content: $icon-nature;
+}
+.icon--paper::before {
+	content: $icon-paper;
+}
+.icon--paper-warn::before {
+	content: $icon-paper-warn;
+}
+.icon--papers::before {
+	content: $icon-papers;
+}
+.icon--password::before {
+	content: $icon-password;
+}
+.icon--path::before {
+	content: $icon-path;
+}
+.icon--phone::before {
+	content: $icon-phone;
+}
+.icon--piggy-bank::before {
+	content: $icon-piggy-bank;
+}
+.icon--pin::before {
+	content: $icon-pin;
+}
+.icon--plant::before {
+	content: $icon-plant;
+}
+.icon--podium::before {
+	content: $icon-podium;
+}
+.icon--price-tag::before {
+	content: $icon-price-tag;
+}
+.icon--right::before {
+	content: $icon-right;
+}
+.icon--search::before {
+	content: $icon-search;
+}
+.icon--siren::before {
+	content: $icon-siren;
+}
+.icon--smile::before {
+	content: $icon-smile;
+}
+.icon--thief::before {
+	content: $icon-thief;
+}
+.icon--tire::before {
+	content: $icon-tire;
+}
+.icon--tools::before {
+	content: $icon-tools;
+}
+.icon--tools-2::before {
+	content: $icon-tools-2;
+}
+.icon--tools-pin::before {
+	content: $icon-tools-pin;
+}
+.icon--tow::before {
+	content: $icon-tow;
+}
+.icon--tow-2::before {
+	content: $icon-tow-2;
+}
+.icon--tow-24::before {
+	content: $icon-tow-24;
+}
+.icon--upload::before {
+	content: $icon-upload;
+}
+.icon--user::before {
+	content: $icon-user;
+}
+.icon--user-2::before {
+	content: $icon-user-2;
+}
+.icon--user-3::before {
+	content: $icon-user-3;
+}
+.icon--warn::before {
+	content: $icon-warn;
+}
+.icon--warn-box::before {
+	content: $icon-warn-box;
+}
+.icon--window-warn::before {
+	content: $icon-window-warn;
+}
+.icon--windshield::before {
+	content: $icon-windshield;
+}
+.icon--twitter::before {
+	content: $icon-twitter;
+}
+.icon--facebook::before {
+	content: $icon-facebook;
+}
+.icon--linkedin::before {
+	content: $icon-linkedin;
+}
+.icon--instagram::before {
+	content: $icon-instagram;
+}

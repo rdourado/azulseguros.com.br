@@ -1,0 +1,59 @@
+&-products {
+	&__list {
+		display: grid;
+		gap: px(20);
+		grid-template-columns: repeat(auto-fit, minmax(px(208), 1fr));
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		.no-cssgrid & > * {
+			margin-bottom: px(20);
+		}
+	}
+
+	&__item {
+		a {
+			color: inherit;
+			display: block;
+			position: relative;
+			text-decoration: none;
+
+			&::before {
+				background: linear-gradient(rgba(#111, 0), rgba(#111, 0.8));
+				bottom: 0;
+				content: '';
+				display: block;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+
+		img {
+			display: block;
+			height: auto;
+			min-height: px(300);
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+
+	&__title {
+		border-left: 3px solid $blue;
+		bottom: 0;
+		color: #fff;
+		font: 700 rem(16) $quicksand;
+		left: 0;
+		line-height: 1.4;
+		margin: 1.5em;
+		padding: 0 0.5em;
+		position: absolute;
+		right: 0;
+		word-wrap: break-word;
+		@include breakpoint(desktop) {
+			font-size: rem(18);
+		}
+	}
+}

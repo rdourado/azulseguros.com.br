@@ -1,0 +1,202 @@
+&-features {
+	&__lead {
+		font: rem(14) $lato;
+		line-height: 1.4;
+		margin: px(-25) auto px(30);
+		padding: 0;
+		text-align: center;
+		@include breakpoint(desktop) {
+			font-size: rem(18);
+			margin: px(-30) auto px(40);
+		}
+
+		b,
+		em,
+		strong {
+			color: $blue;
+			font-style: inherit;
+			font-weight: inherit;
+
+			.az--light & {
+				color: $theme-black;
+			}
+
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+			}
+		}
+	}
+
+	&__list {
+		display: grid;
+		gap: px(20);
+		grid-template-columns: repeat(auto-fit, minmax(px(150), 1fr));
+		justify-items: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@include breakpoint(desktop) {
+			gap: px(30);
+			grid-template-columns: repeat(auto-fit, minmax(px(162), 1fr));
+			margin-top: 0;
+		}
+
+		.no-cssgrid & > * {
+			margin-bottom: px(20);
+			@include breakpoint(desktop) {
+				margin-bottom: px(30);
+			}
+		}
+
+		& ~ & {
+			margin-top: px(20);
+			@include breakpoint(desktop) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__item {
+		margin: 0 0;
+		max-width: px(320);
+		padding: 0;
+		text-align: center;
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+
+		.icon {
+			color: $blue;
+			display: block;
+			font-size: rem(46);
+			line-height: 1;
+			margin: 0 auto 0.1em;
+			@include breakpoint(desktop) {
+				font-size: rem(75);
+			}
+
+			.az--light & {
+				color: $theme-black;
+			}
+
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+			}
+		}
+
+		a {
+			color: $blue;
+			text-decoration: none;
+
+			.az--light & {
+				color: $theme-black;
+				text-decoration: underline;
+			}
+
+			.az--dark &,
+			.az--contrast & {
+				color: $theme-white;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__title {
+		color: $greyish;
+		display: block;
+		font: 700 rem(16) $quicksand;
+		margin: 0 0 0.7em;
+		padding: 0;
+		@include breakpoint(desktop) {
+			font-size: rem(22);
+		}
+
+		.az--light & {
+			color: $theme-black;
+		}
+
+		.az--dark &,
+		.az--contrast & {
+			color: $theme-white;
+		}
+	}
+
+	&__description {
+		font: rem(14) $lato;
+		line-height: 1.5;
+		margin: 0;
+		padding: 0;
+		@include breakpoint(desktop) {
+			font-size: rem(20);
+		}
+	}
+
+	&__footer {
+		align-items: center;
+		display: flex;
+		font: rem(12) $lato;
+		flex-direction: column;
+		justify-content: center;
+		line-height: 1.3;
+		margin: px(35) auto 0;
+		max-width: px(768);
+		text-align: center;
+		@include breakpoint(desktop) {
+			font-size: rem(14);
+			margin-top: px(40);
+		}
+
+		p {
+			font: inherit;
+			margin: 2.6em 0 0;
+			padding: 0;
+		}
+
+		p + p {
+			margin-top: 1em;
+		}
+	}
+
+	&--alt &__list {
+		gap: px(20);
+		grid-template-columns: 1fr;
+
+		.no-cssgrid & > * {
+			margin-bottom: px(20);
+		}
+	}
+
+	&--alt &__item {
+		box-sizing: border-box;
+		margin: 0 auto;
+		max-width: px(768);
+		padding: 0 0 0 px(50);
+		position: relative;
+		text-align: left;
+		width: 100%;
+		@include breakpoint(desktop) {
+			padding-left: px(70);
+		}
+
+		// stylelint-disable no-descending-specificity
+		.icon {
+			font-size: rem(40);
+			left: 0;
+			position: absolute;
+			top: 0;
+			@include breakpoint(desktop) {
+				font-size: rem(50);
+			}
+			// stylelint-enable
+		}
+	}
+
+	// stylelint-disable no-descending-specificity
+	&--alt &__title {
+		margin: 0;
+	}
+	// stylelint-enable
+}

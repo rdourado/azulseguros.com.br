@@ -1,0 +1,339 @@
+&-header {
+	position: relative;
+
+	.home & {
+		border-bottom: px(60) solid $grey-lighter;
+		@include breakpoint(desktop) {
+			border-bottom-width: px(70);
+		}
+	}
+
+	.az--dark & {
+		border-bottom-color: $theme-grey-dark;
+	}
+
+	.az--contrast & {
+		border-bottom-color: $theme-blue-dark;
+	}
+
+	&__wrapper {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 6.25%;
+		@include breakpoint(desktop) {
+			margin: 0 15%;
+		}
+	}
+
+	&__logo {
+		flex-shrink: 0;
+		margin: 0 px(40) 0 0;
+		padding: px(8) 0;
+		width: px(44);
+		@include breakpoint(desktop) {
+			padding: px(9) 0;
+			width: px(60);
+		}
+
+		img {
+			display: block;
+		}
+	}
+
+	&__nav {
+		flex-grow: 1;
+	}
+
+	&__toggle {
+		@extend .icon;
+		@extend .icon--menu;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		flex-shrink: 0;
+		font: 0 / 0 serif;
+		margin: 0 px(-20) 0 0;
+		order: 99;
+		outline: none;
+		padding: 0 px(20);
+		@include breakpoint(desktop) {
+			margin-left: px(10);
+		}
+
+		&::before {
+			color: $blue;
+			font-size: rem(20);
+			line-height: px(60);
+			@include breakpoint(desktop) {
+				font-size: rem(24);
+				line-height: px(78);
+			}
+		}
+	}
+
+	&--show-menu &__toggle {
+		@extend .icon--close;
+	}
+
+	&__search {
+		@extend .icon;
+		@extend .icon--search;
+		margin: 0 0 0 auto;
+	}
+
+	&__login {
+		@extend .icon;
+		@extend .icon--user-2;
+		margin: 0 px(-5) 0 0;
+	}
+
+	&__search,
+	&__login {
+		font: 0 / 0 serif;
+		padding: 0 px(10);
+		text-decoration: none;
+		@include breakpoint(desktop) {
+			display: none;
+		}
+
+		&::before {
+			color: $blue;
+			font-size: rem(18);
+			line-height: px(60);
+		}
+	}
+
+	&__services {
+		align-items: center;
+		bottom: px(-60);
+		justify-content: space-around;
+		left: 0;
+		list-style: none;
+		margin: 0;
+		padding: 0 px(30);
+		position: absolute;
+		right: 0;
+		@include breakpoint(desktop) {
+			bottom: px(-70);
+			justify-content: space-between;
+			left: 15%;
+			padding: 0;
+			right: 15%;
+
+			.home &:not(.slick-slider) {
+				display: flex;
+			}
+		}
+
+		@include breakpoint(mobile) {
+			.az-header--show-menu & {
+				display: none;
+			}
+
+			&:not(.slick-slider) {
+				visibility: hidden;
+			}
+		}
+
+		.slick-arrow {
+			align-items: center;
+			background: transparent;
+			border: none;
+			bottom: 0;
+			display: flex;
+			font: 0 / 0 serif;
+			height: px(50);
+			justify-content: center;
+			margin: 0;
+			outline: none;
+			padding: 0;
+			position: absolute;
+			width: px(30);
+			@include breakpoint(desktop) {
+				display: none !important;
+			}
+
+			&::before {
+				border-bottom: 1px solid $grey;
+				border-left: 1px solid $grey;
+				content: '';
+				display: inline-block;
+				padding: px(3);
+			}
+
+			&.slick-disabled {
+				opacity: 0.3;
+			}
+		}
+
+		.slick-prev {
+			left: 0;
+
+			&::before {
+				transform: rotate(45deg);
+			}
+		}
+
+		.slick-next {
+			right: 0;
+
+			&::before {
+				transform: rotate(225deg);
+			}
+		}
+
+		@include breakpoint(desktop) {
+			.slick-list {
+				overflow: visible !important;
+			}
+
+			.slick-track {
+				display: flex !important;
+				transform: none !important;
+				width: auto !important;
+			}
+		}
+
+		&::before {
+			background: $grey-lighter;
+			border-radius: 0.4em 0.4rem 0 0;
+			color: $greyish;
+			content: attr(aria-label);
+			display: block;
+			font: 700 rem(11) $quicksand;
+			left: 50%;
+			padding: 0.3em 2em;
+			position: absolute;
+			top: px(-8);
+			transform: translate(-50%, -50%);
+			@include breakpoint(desktop) {
+				font-size: rem(13);
+				top: 0;
+			}
+
+			.az--light & {
+				color: $theme-grey-dark;
+			}
+
+			.az--dark & {
+				background: $theme-grey-dark;
+				color: $theme-white;
+			}
+
+			.az--contrast & {
+				background: $theme-blue-dark;
+				color: $theme-white;
+			}
+		}
+
+		.menu-item {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			min-height: px(50);
+			position: relative;
+			white-space: nowrap;
+			@include breakpoint(desktop) {
+				min-height: px(70);
+
+				+ .menu-item {
+					margin-left: px(15);
+				}
+			}
+
+			&:hover::before {
+				background: $grey-lighter;
+				box-sizing: border-box;
+				color: $greyish;
+				content: attr(aria-label);
+				display: block;
+				font: rem(15) $lato;
+				left: 50%;
+				margin: px(-5) 0 0;
+				padding: px(20) px(10);
+				pointer-events: none;
+				position: absolute;
+				text-align: center;
+				top: 100%;
+				transform: translateX(-50%);
+				width: px(175);
+				white-space: normal;
+			}
+
+			a {
+				align-items: center;
+				color: inherit;
+				display: flex;
+				font: rem(11) $lato;
+				outline: none;
+				text-decoration: none;
+				@include breakpoint(desktop) {
+					font-size: rem(13);
+				}
+
+				&::before {
+					@extend .icon;
+					color: $greyish;
+					font-size: rem(22);
+					margin-right: px(8);
+					@include breakpoint(desktop) {
+						font-size: rem(30);
+						margin-right: px(10);
+					}
+
+					.az--light & {
+						color: $theme-black;
+					}
+
+					.az--dark &,
+					.az--contrast & {
+						color: $theme-white;
+					}
+				}
+			}
+
+			// stylelint-disable no-descending-specificity
+			&--pague a::before {
+				@extend .icon--barcode;
+			}
+			&--apolice a::before {
+				@extend .icon--papers;
+			}
+			&--parcelas a::before {
+				@extend .icon--long-paper;
+			}
+			&--sos a::before {
+				@extend .icon--tow;
+				@include breakpoint(desktop) {
+					font-size: rem(34);
+				}
+			}
+			&--sinistro a::before {
+				@extend .icon--car-crash;
+			}
+			&--corretor a::before {
+				@extend .icon--user-3;
+			}
+			&--condicoes a::before {
+				@extend .icon--book;
+			}
+			&--servicos a::before {
+				@extend .icon--tools;
+			}
+			&--carro a::before {
+				@extend .icon--car-2;
+			}
+			// stylelint-enable
+
+			a:hover {
+				color: $blue;
+
+				&::before {
+					color: $blue;
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}

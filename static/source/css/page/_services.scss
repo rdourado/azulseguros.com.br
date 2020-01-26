@@ -1,0 +1,75 @@
+&-services {
+	&__list {
+		display: grid;
+		gap: px(40);
+		grid-template-columns: repeat(auto-fit, minmax(px(180), 1fr));
+		justify-items: space-around;
+		list-style: none;
+		margin: px(10) 0 px(20);
+		padding: 0;
+
+		.no-cssgrid & > * {
+			margin-bottom: px(40);
+		}
+
+		.menu-item {
+			a {
+				align-items: center;
+				color: inherit;
+				display: flex;
+				font: rem(14) $lato;
+				outline: none;
+				text-decoration: none;
+				@include breakpoint(desktop) {
+					font-size: rem(16);
+				}
+			}
+
+			a::before {
+				@extend .icon;
+				font-size: rem(24);
+				margin-right: px(8);
+				@include breakpoint(desktop) {
+					font-size: rem(34);
+					margin-right: px(10);
+				}
+			}
+
+			&--pague a::before {
+				@extend .icon--barcode;
+			}
+			&--apolice a::before {
+				@extend .icon--papers;
+			}
+			&--parcelas a::before {
+				@extend .icon--long-paper;
+			}
+			&--sos a::before {
+				@extend .icon--tow;
+			}
+			&--sinistro a::before {
+				@extend .icon--car-crash;
+			}
+			&--corretor a::before {
+				@extend .icon--user-3;
+			}
+			&--condicoes a::before {
+				@extend .icon--book;
+			}
+			&--servicos a::before {
+				@extend .icon--tools;
+			}
+			&--carro a::before {
+				@extend .icon--car-2;
+			}
+
+			a:hover {
+				color: $blue;
+
+				&::before {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
